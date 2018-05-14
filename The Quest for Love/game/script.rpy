@@ -48,6 +48,45 @@ label start:
     bl "{cps=10}...{/cps}"
     bl "{cps=30}Anyway, you should be on your way to first period, I would also implore you to check out some of the clubs after school.{/cps}"
     main "{cps=30}Alright then, thanks for your help Mr. Blankenship{/cps}"
+        # School bell here?
+    scene bg classroom
+    with diss
+    main "Sigh..."
+    main "New school, still boring I guess..."
+    main "Well may as well look at some clubs."
+    scene hall1
+    with diss
+    main "Man all these clubs don't feel right to me..."
+    ambi "Hey bro!"
+    ambi "Wait up [name]!"
+    main "?"
+    show justin
+    jus "Hey I'm Justin from your first period class!"
+    jus "I see your looking for a club to join, right?"
+    main "I mean, I guess so..."
+    jus "Well you should join my club, Boy's Club!"
+    main "Boy's Club? Sounds pretty sus to me..."
+    jus "Nah it's not like that... well most of the time."
+    jus "Anyway, it's really just a bunch of friends that hang out and stuff"
+    jus "Come with me, we're meeting right now!"
+    main "Well whatever..."
+    scene boysclub1
+    with diss
+    jus "Well here we are! Go ahead and talk to everyone."
+    cho "Pick a character to learn about."
+    menu:
+        "Matthew":
+            jump choice1_mat
+        "Jack":
+            jump choice1_jac
+    label choice1_mat:
+        show matthew smile
+        cho "Matthew is a strange man. He loves 9/11 conspiracies, jazz, and being annoying as possible"
+
+    label choice1_jac:
+        show jacky
+        cho "Jack is a MASTER CODER. He loves getting reddit upvotes and steamed ham memes"
+    label choice1_done:
 
 
 
