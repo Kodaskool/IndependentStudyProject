@@ -4,8 +4,10 @@
 # name of the character.
 
 define e = Character("Matthew")
-
-
+define main = Character("New Student")
+define diss = Dissolve(1.0)
+define ambi = Character("Random Voice")
+define bl = Character("Mr. Blankenship")
 # The game starts here.
 
 label start:
@@ -20,36 +22,35 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show matthew smile
+
 
     # These display lines of dialogue.
 
-    e "Wanna buy a ticket?"
-    menu:
+    main "{cps=30}It's a warm summer day{/cps}, {cps=30}my first day at Allen High School.{/cps}"
+    main "I'm nervous about this place, I have heard some weird rumors about this place"
+    scene bg front
+    with diss
+    main "So where do I go now?"
+    ambi "Oh, you must be the new student right?"
+    main "Ah, yes that's me."
+    show blanky
+    bl "Hey, I'm the principal Mr. Joshua Blankenship, but my friends call me Josh."
+    bl "What's your name bud?"
+    python:
+        name = renpy.input("Pick a name")
+        name = name.strip()
+        main = Character("[name]")
+    main "My name is [name] sir."
+    bl "Nice to meet ya, [name], but DON'T CALL ME SIR!"
+    main "Oh sorry sir."
+    bl "..."
+    bl "Well, either way your in Class 1, and also I would implore you to check out clubs after school."
+    main " Alright then, thanks for your help Mr. Blankenship"
 
-        "Sure I guess...":
-            jump choice1_yes
 
-        "No I'm good":
-            jump choice1_no
 
-    label choice1_yes:
 
-        $ menu_flag = True
 
-        e "$5 then buddy"
-
-        jump choice1_done
-
-    label choice1_no:
-
-        $ menu_flag = False
-
-        e "Are you sure, it's only 5 dollars AND comes with free dessert?"
-
-        jump choice1_done
-
-    label choice1_done:
 
         # ... the game continues here.
 
