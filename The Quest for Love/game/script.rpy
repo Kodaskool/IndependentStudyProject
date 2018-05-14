@@ -2,7 +2,7 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-
+define config.layers = [ 'master', 'transient', 'screens', 'overlay' ]
 define e = Character("Matthew")
 define main = Character("New Student")
 define diss = Dissolve(1.0)
@@ -27,25 +27,27 @@ label start:
     # These display lines of dialogue.
 
     main "{cps=30}It's a warm summer day{/cps}, {cps=30}my first day at Allen High School.{/cps}"
-    main "I'm nervous about this place, I have heard some weird rumors about this place"
+    main "{cps=30}I'm nervous about this place, I've heard some weird rumors surrounding the school.{/cps}"
     scene bg front
     with diss
-    main "So where do I go now?"
-    ambi "Oh, you must be the new student right?"
-    main "Ah, yes that's me."
-    show blanky
-    bl "Hey, I'm the principal Mr. Joshua Blankenship, but my friends call me Josh."
-    bl "What's your name bud?"
+    main "{cps=30}So where do I go now?{/cps}"
+    ambi "{cps=30}Oh, you must be the new student.{/cps}"
+    main "{cps=30}Ah, yes that's me.{/cps}"
+    show blanky:
+        xalign 0.5
+        yalign 3.5
+    bl "{cps=30}I'm the principal Joshua Blankenship. But you can call me Josh.{/cps}"
+    bl "{cps=30}What's your name bud?{/cps}"
     python:
         name = renpy.input("Pick a name")
         name = name.strip()
         main = Character("[name]")
-    main "My name is [name] sir."
-    bl "Nice to meet ya, [name], but DON'T CALL ME SIR!"
-    main "Oh sorry sir."
-    bl "..."
-    bl "Well, either way your in Class 1, and also I would implore you to check out clubs after school."
-    main " Alright then, thanks for your help Mr. Blankenship"
+    main "{cps=30}I'm [name] sir.{/cps}"
+    bl "{cps=30}Nice to meet ya, [name], but try not to call me sir{/cps}"
+    main "{cps=30}Oh sorry sir.{/cps}"
+    bl "{cps=10}...{/cps}"
+    bl "{cps=30}Anyway, you should be on your way to first period, I would also implore you to check out some of the clubs after school.{/cps}"
+    main "{cps=30}Alright then, thanks for your help Mr. Blankenship{/cps}"
 
 
 
@@ -53,9 +55,6 @@ label start:
 
 
         # ... the game continues here.
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
     # This ends the game.
 
     return
