@@ -2,15 +2,19 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-
-image matthew smile = "matthewsmile.jpg"
+image blanky = "blanky.png"
+image matthewsmile = "matthewsmile.jpg"
+image greta = "greta.jpg"
+image jackie = "jackie.png"
+image robert = "robert.jpg"
+image justin = "justin.jpeg"
 define main = Character("New Student")
 define diss = Dissolve(1.0)
 define ambi = Character("Random Voice")
 define bl = Character("Mr. Blankenship")
 define jus = Character("Justin")
 define e = Character("Matthew")
-image blanky = "blanky.png"
+
 
 
 # The game starts here.
@@ -89,40 +93,38 @@ label start:
 
 
         "Matthew" if matthew == False:
-            show matthew smile
+            show matthewsmile
             "{cps=30}Matthew is a strange man. He loves 7/11 conspiracies, jazz and being as annoying as possible. Don't mention tickets around him.{/cps}"
             $ matthew = True
+            hide matthewsmile
         "Jack" if jack == False:
-            show jackieboy
+            show jackie
             "{cps=30}Jack is a MASTER CODER. He loves getting reddit upvotes, girls and won an award for being an outstanding band member. Don't mention steamed hams around him.{/cps}"
             $ jack = True
+            hide jackie
         "Robert" if robert == False:
-            show robbie
+            show robert
             #this was i, justin cartier the third
             "{cps=30}Robert is an inspiring navy officer. He loves the south, hats and is fluent in banjo. Don't mention world war II around him.{/cps}"
             $ robert = True
+            hide robert
         "Greta" if greta == False:
-            show oigreta
+            show greta
             "{cps=30}Greta is the only girl in the club. She loves anime, Denmark and 'Vote Felippo' stickers. Don't mention a man by the name of Rosenburg.{/cps}"
             $ greta = True
-        "Watashi" if greta == True:
-                    if matthew == True:
-                        if robert == True:
-                            show justin
-                            "{cps=30}I am the leader of the club. I love Jojo's Bizzare Adventure, One Piece and History.{/cps}"
-                            jump after_intro
+            hide greta
+        "Watashi" if greta == matthew == robert == jack == True:
+            show justin
+            jus "{cps=30}I am the leader of the club. I love Jojo's Bizzare Adventure, One Piece and History.{/cps}"
+            jump after_intro
 
     label matthew:
-        hide matthewsmile
         jump club_member
     label jack:
-        hide jackieboy
         jump club_member
     label robert:
-        hide robbie
         jump club_member
     label greta:
-        hide oigreta
         jump club_member
     label after_intro:
         "After learning about a member of the boys club, I reconsidered my application to the club"
