@@ -128,6 +128,26 @@ label start:
         jump club_member
     label after_intro:
         "After learning about a member of the boys club, I reconsidered my application to the club"
+    scene back
+    with diss
+    "The only route available at the moment is Matthew's."
+    scene bg classroom
+    with diss
+    main "Another boring day, probably cause I don't actually try in class..."
+    scene hall1
+    with diss
+    main "Well guess I'll head home..."
+    ambi "Hey [name]."
+    show blanky:
+        xalign 0.5
+        yalign 0.1
+    with diss
+    main "Oh, hello sir."
+    bl "I swear..."
+    main "Huh?"
+    bl "Nevermind that...How do you like it here so far? Find any clubs yet?"
+    
+
 
         # ... the game continues here.
     # This ends the game.
